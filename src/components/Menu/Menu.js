@@ -17,28 +17,33 @@ class Menu extends Component {
           id: 1,
           title: 'Thai',
           image: thaiHeroImage,
+          linkUrl: '',
         },
         {
           id: 2,
           title: 'Chinese',
           image: chineseHeroImage,
+          linkUrl: '',
         },
         {
           id: 3,
           title: 'Mexican',
           image: mexicanHeroImage,
+          linkUrl: '',
         },
         {
           id: 4,
           title: 'Indian',
           image: indianHeroImage,
           size: 'large',
+          linkUrl: 'indian',
         },
         {
           id: 5,
           title: 'Italian',
           image: italianHeroImage,
           size: 'large',
+          linkUrl: '',
         },
       ],
     };
@@ -47,8 +52,8 @@ class Menu extends Component {
   render() {
     return (
       <div className="directory-menu">
-        {this.state.menuOptions.map(({ id, title, image, size }) => {
-          return <MenuItem key={id} title={title} image={image} size={size} />;
+        {this.state.menuOptions.map(({ id, ...otherMenuProps }) => {
+          return <MenuItem key={id} {...otherMenuProps} />;
         })}
       </div>
     );
