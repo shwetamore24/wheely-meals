@@ -5,10 +5,12 @@ import './App.css';
 
 import Home from './pages/home/Home';
 import Order from './pages/order/Order';
+import Header from './components/Header/Header';
 
 function App() {
   return (
     <div>
+      <Header />
       <Switch>
         <Route exact path="/" component={Home} />
         <Route path="/order" component={Order} />
